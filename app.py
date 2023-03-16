@@ -11,7 +11,8 @@ if os.path.exists('./dataset.csv'):
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar: 
-    st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")
+    # st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")
+    st.image("https://images.unsplash.com/photo-1546776310-eef45dd6d63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=510&q=80")
     st.title("AutoML")
     choice = st.radio("Navigation", ["Upload","Profiling","Modelling", "Download"])
     st.info("This project application helps you build and explore your data.")
