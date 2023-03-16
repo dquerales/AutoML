@@ -45,7 +45,7 @@ if choice == "Modelling":
         best_model = compare_models()
         compare_df = pull()
         st.dataframe(compare_df)
-        st.pyplot(evaluate_model(best_model))
+        # evaluate_model(best_model)
         predict_model(best_model)
         predict_df = pull()
         st.dataframe(predict_df)
