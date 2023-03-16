@@ -1,7 +1,7 @@
 # from operator import index
 import streamlit as st
 # import plotly.express as px
-from pycaret.classification import setup, pull, compare_models, save_model, evaluate_model
+from pycaret.classification import setup, pull, compare_models, save_model, evaluate_model, predict_model
 import pandas as pd
 import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
@@ -46,6 +46,11 @@ if choice == "Modelling":
         compare_df = pull()
         st.dataframe(compare_df)
         evaluate_model(best_model)
+        eval_plot = pull()
+        st.pyplot(eval_plot)
+        predict_model(best_model)
+        predict_df = pull()
+        st.dataframe(predict_df)
         save_model(best_model, 'best_model')
 
 if choice == "Download": 
