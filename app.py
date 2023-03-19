@@ -32,11 +32,11 @@ if choice == "Profiling":
     profile_df = df.profile_report()
     st_profile_report(profile_df)
     export = profile_df.to_html()
-    st.download_button(label="Download Full Report as HTML", data=export, file_name='profile_report.html')
+    st.download_button(label="Download Report", data=export, file_name='profile_report.html', use_container_width=True)
 
 if choice == "Modelling": 
     chosen_target = st.selectbox('Choose the Target Column', df.columns)
-    if st.button('Run Modelling'): 
+    if st.button('Run Modelling', use_container_width=True): 
         setup(df, target=chosen_target, silent=True)
         setup_df = pull()
         st.dataframe(setup_df)
@@ -51,4 +51,4 @@ if choice == "Modelling":
 
 if choice == "Download": 
     with open('best_model.pkl', 'rb') as f: 
-        st.download_button('Download Model', f, file_name="best_model.pkl")
+        st.download_button('Download Model', f, file_name="best_model.pkl", use_container_width=True)
