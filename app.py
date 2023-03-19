@@ -1,6 +1,4 @@
-# from operator import index
 import streamlit as st
-# import plotly.express as px
 from pycaret.classification import setup, pull, compare_models, save_model, evaluate_model, predict_model
 import pandas as pd
 import pandas_profiling
@@ -11,13 +9,12 @@ if os.path.exists('./dataset.csv'):
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar: 
-    # st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")
     st.image("https://images.unsplash.com/photo-1582571352032-448f7928eca3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992&q=80")
     st.title("AutoML")
     choice = st.radio("Navigation", ["Upload","Profiling","Modelling", "Download"])
-    st.info("This project application helps you build and explore your data.")
-    st.markdown('This webapp was made by Daniel Querales (d.querales@gmail.com) using **Streamlit**.')
-    # st.image('https://streamlit.io/images/brand/streamlit-mark-color.png', width=50)
+    #st.info("This project application helps you build and explore your data.")
+    st.info('This webapp was made by Daniel Querales (d.querales@gmail.com) using **Streamlit**.')
+    st.image('https://streamlit.io/images/brand/streamlit-mark-color.png', width=50)
 
 if choice == "Upload":
     st.title("Upload Your Dataset")
