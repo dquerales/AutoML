@@ -14,7 +14,7 @@ with st.sidebar:
     choice = st.radio("Navigation", ["Upload","Profiling","Modelling", "Download"])
     #st.info("This project application helps you build and explore your data.")
     st.info('This webapp was made by Daniel Querales (d.querales@gmail.com) using **Streamlit**.')
-    st.image('https://streamlit.io/images/brand/streamlit-mark-color.png', width=50)
+    #st.image('https://streamlit.io/images/brand/streamlit-mark-color.png', width=50)
 
 if choice == "Upload":
     st.title("Upload Your Dataset")
