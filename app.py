@@ -9,13 +9,10 @@ if os.path.exists('./dataset.csv'):
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar: 
-    st.image("https://images.unsplash.com/photo-1582571352032-448f7928eca3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992&q=80")
     st.title("AutoML")
     choice = st.radio("Navigation", ["Upload","Profiling","Modelling", "Download"])
-    #st.info("This project application helps you build and explore your data.")
-    st.info('This webapp was made by Daniel Querales (d.querales@gmail.com) using **Streamlit**.')
-    #st.image('https://streamlit.io/images/brand/streamlit-mark-color.png', width=50)
-
+    st.markdown('Made by [Daniel Querales](https://www.linkedin.com/in/danielquerales/)')
+  
 if choice == "Upload":
     st.title("Upload Your Dataset")
     file = st.file_uploader("Upload Your Dataset")
