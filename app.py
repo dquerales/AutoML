@@ -37,14 +37,15 @@ if choice == "Modelling":
         setup(df, target=chosen_target, session_id=1)
         setup_df = pull()
         st.dataframe(setup_df, use_container_width=True)
-        best_model  = compare_models()
+        best_model  = compare_models(budget_time = 0.5)
+        # best_model  = create_model('xgboost')
         compare_df = pull()
-        st.dataframe(compare_df)
-        #evaluate_model(best_model)
-        #predict_model(best_model)
-        #predict_df = pull()
-        #st.dataframe(predict_df)
-        #save_model(best_model, 'best_model')
+        st.dataframe(compare_df, use_container_width=True)
+        evaluate_model(best_model)
+        predict_model(best_model)
+        predict_df = pull()
+        st.dataframe(predict_df)
+        save_model(best_model, 'best_model')
 
 if choice == "Download": 
     with open('best_model.pkl', 'rb') as f: 
