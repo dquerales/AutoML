@@ -34,12 +34,12 @@ if choice == "Profiling":
 if choice == "Modelling": 
     chosen_target = st.selectbox('Choose the Target Column', df.columns)
     if st.button('Run Modelling', use_container_width=True): 
-        setup(df, target=chosen_target, session_id=1)
-        setup_df = pull()
+        setup_df = setup(df, target=chosen_target, session_id=1)
+        # setup_df = pull()
         st.dataframe(setup_df)
         best_model = compare_models(include = ['lr', 'dt', 'lightgbm', 'xgboost'])
-        compare_df = pull()
-        st.dataframe(compare_df)
+        # compare_df = pull()
+        st.dataframe(best_model)
         # evaluate_model(best_model)
         #predict_model(best_model)
         #predict_df = pull()
