@@ -36,15 +36,18 @@ if choice == "Modelling":
     if st.button('Run Modelling', use_container_width=True): 
         setup(df, target=chosen_target, session_id=1)
         setup_df = pull()
+        st.header('Setup')
         st.dataframe(setup_df, use_container_width=True)
+        st.header('Setup')
         best_model  = compare_models(budget_time = 0.5)
-        # best_model  = create_model('xgboost')
         compare_df = pull()
         st.dataframe(compare_df, use_container_width=True)
+        st.header('Setup')
         evaluate_model(best_model)
+        st.header('Setup')
         predict_model(best_model)
         predict_df = pull()
-        st.dataframe(predict_df)
+        st.dataframe(predict_df,  use_container_width=True)
         save_model(best_model, 'best_model')
 
 if choice == "Download": 
