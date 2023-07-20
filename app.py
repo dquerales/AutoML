@@ -37,7 +37,7 @@ if choice == "Modelling":
         setup(df, target=chosen_target, session_id=1)
         setup_df = pull()
         st.dataframe(setup_df, use_container_width=True)
-        best_model = compare_models(include = ['lr', 'dt', 'lightgbm', 'xgboost'])
+        best_model = compare_models(include = ['xgboost'])
         compare_df = pull()
         st.dataframe(compare_df)
         #evaluate_model(best_model)
