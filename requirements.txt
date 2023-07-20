@@ -1,5 +1,5 @@
 pandas
 pandas_profiling
-streamlit=2.3.6
+streamlit
 streamlit_pandas_profiling
-pycaret
+pycaret==2.3.10
