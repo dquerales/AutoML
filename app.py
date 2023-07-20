@@ -37,14 +37,14 @@ if choice == "Modelling":
         setup(df, target=chosen_target)
         setup_df = pull()
         st.dataframe(setup_df)
-        best_model = compare_models()
-        compare_df = pull()
-        st.dataframe(compare_df)
+        #best_model = compare_models()
+        #compare_df = pull()
+        #st.dataframe(compare_df)
         # evaluate_model(best_model)
-        predict_model(best_model)
-        predict_df = pull()
-        st.dataframe(predict_df)
-        save_model(best_model, 'best_model')
+        #predict_model(best_model)
+        #predict_df = pull()
+        #st.dataframe(predict_df)
+        #save_model(best_model, 'best_model')
 
 if choice == "Download": 
     with open('best_model.pkl', 'rb') as f: 
