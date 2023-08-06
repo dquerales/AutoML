@@ -5,12 +5,14 @@ import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 import os 
 
+st.set_page_config(page_title="AutoML & Explorer App", page_icon="🚗")
+
 if os.path.exists('./dataset.csv'): 
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar: 
     st.title("AutoML")
-    choice = st.radio("Navigation", ["Upload","Profiling","Modelling", "Download"])
+    choice = st.radio("Navigation", ["Upload","Profiling","Modelling"])
     st.markdown('Made by [Daniel Querales](https://www.linkedin.com/in/danielquerales/)')
   
 if choice == "Upload":
@@ -47,8 +49,7 @@ if choice == "Modelling":
         predict_model(best_model)
         predict_df = pull()
         st.dataframe(predict_df,  use_container_width=True)
+        st.header('Download your model')
         save_model(best_model, 'best_model')
-
-if choice == "Download": 
-    with open('best_model.pkl', 'rb') as f: 
-        st.download_button('Download Model', f, file_name="best_model.pkl", use_container_width=True)
+    	with open('best_model.pkl', 'rb') as f: 
+        	st.download_button('Download Model', f, file_name="best_model.pkl", use_container_width=True)
