@@ -11,10 +11,10 @@ if os.path.exists('./dataset.csv'):
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar: 
-    st.title("AutoML")
+    st.title("🚗 AutoML")
     choice = st.radio("Navigation", ["Upload","Profiling","Modelling"])
     st.markdown('Made by [Daniel Querales](https://www.linkedin.com/in/danielquerales/)')
-  
+
 if choice == "Upload":
     st.title("Upload Your Dataset")
     file = st.file_uploader("Upload Your Dataset")
@@ -51,5 +51,5 @@ if choice == "Modelling":
         st.dataframe(predict_df,  use_container_width=True)
         st.header('Download your model')
         save_model(best_model, 'best_model')
-    	with open('best_model.pkl', 'rb') as f: 
-        	st.download_button('Download Model', f, file_name="best_model.pkl", use_container_width=True)
+        with open('best_model.pkl', 'rb') as f: 
+            st.download_button('Download Model', f, file_name="best_model.pkl", use_container_width=True)
