@@ -1,6 +1,8 @@
 # AutoML
 
-This is a full machine learning workflow app for explore, train and export classifier models
+This is a full machine learning workflow app for explore, train and export classifier models.
+
+Check the app [here](https://dquerales-automl-app-c70cuz.streamlit.app/)
 
 ## Installation
 
